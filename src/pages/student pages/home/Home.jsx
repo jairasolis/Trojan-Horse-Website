@@ -23,22 +23,20 @@ const Home = () => {
         }
         return building === selectedBuilding;
     };
-    function CardComponent(props){
+    function CardComponent(props) {
         const [building_name, room_number] = props.room_name.split(" ");
         return (
             <div className="card" style={{ display: filterCardsByBuilding(`${building_name} BLDG`) ? 'block' : 'none' }}>
-                <Link to={`/student/reserve/${building_name}/${room_number}`}>
-                    <div className="card-body-2">
-                        <div>
-                            <img src={`/public/images/${props.img_name}`} alt={props.img_name} />
-                        </div>
-                        <h5 className="card-title">{props.title}</h5>
+                <div className="card-body-2">
+                    <div>
+                        <img src={`/public/images/${props.img_name}`} alt={props.img_name} />
                     </div>
-                </Link>
+                    <h5 className="card-title">{props.title}</h5>
+                </div>
             </div>
         )
     }
-    
+
 
     return (
         <div className="home-container">
@@ -62,11 +60,11 @@ const Home = () => {
                     </Dropdown>
                 </div>
             </div>
-            
+
             <div className="card-container">
                 {
                     PTCRoomsJSON.map(
-                        (data, index) => <CardComponent title={data.title} img_name={data.img_name} room_name={data.room_name} key={index}/>
+                        (data, index) => <CardComponent title={data.title} img_name={data.img_name} room_name={data.room_name} key={index} />
                     )
                 }
             </div>

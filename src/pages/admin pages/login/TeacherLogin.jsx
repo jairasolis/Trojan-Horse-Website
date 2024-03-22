@@ -30,6 +30,7 @@ const TeacherLogin = () => {
                     form
                 );
                 console.log(response.data);
+                localStorage.setItem('userData', JSON.stringify(response.data));
                 setErrorMessage("");
                 // Redirect user upon successful login
                 window.location.href = "/Admin/Home";
