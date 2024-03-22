@@ -28,7 +28,11 @@
         "room_name" : "PTC 303",
         "img_name" : "PTC 303.jpg"
     },
-    
+    {
+        "title":"PTC - AC ROOM",
+        "room_name" : "PTC 304",
+        "img_name" : "PTC 305.jpg"
+    },
     {
         "title":"PTC - AC ROOM",
         "room_name" : "PTC 306",
