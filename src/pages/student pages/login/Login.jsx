@@ -31,7 +31,7 @@ const Login = () => {
                 console.log(response.data);
                 setErrorMessage("");
                 // Redirect user upon successful login
-                window.location.href = "/Admin/Home";
+                window.location.href = "/Student/Home";
             } catch (error) {
                 if (error.response && error.response.status === 422) {
                     console.error("Unauthorized: Incorrect email or password");

@@ -50,13 +50,6 @@
     },
     {
         "title": "PTC - AC ROOM",
-        "room_name": "PTC 303",
-        "img_name": "PTC 303.jpg",
-        "building": "PTC BLDG",
-        "classroom_id": "8"
-    },
-    {
-        "title": "PTC - AC ROOM",
         "room_name": "PTC 306",
         "img_name": "PTC 306.jpg",
         "building": "PTC BLDG",
