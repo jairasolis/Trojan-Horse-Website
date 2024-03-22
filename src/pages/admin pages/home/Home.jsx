@@ -1,29 +1,39 @@
 import React, { useState } from 'react';
 import { Dropdown } from 'react-bootstrap';
-import '../home/Home.css';
-import { Link } from 'react-router-dom';
-import Navbar from '../../nav/Navbar';
+import { Link } from 'react-router-dom'; // Assuming you're using react-router-dom
+import roomData from '../../../../public/map/PTCRooms.json'; // Importing JSON data
+import "./Home.css"
 
 const Home = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [selectedBuilding, setSelectedBuilding] = useState(null);
-
-
     const handleBuildingSelect = (building) => {
         setSelectedBuilding(building);
         setDropdownOpen(false);
     };
 
     const filterCardsByBuilding = (building) => {
-        if (selectedBuilding === null) {
+        if (!selectedBuilding) {
             return true;
         }
         return building === selectedBuilding;
     };
 
-    const handleCardClick = () => {
-        navigate('/admin/reserve');
-    };
+    const cards = roomData.map(data => (
+        <div key={data.room_name} className="card" style={{ display: filterCardsByBuilding(data.building) ? 'block' : 'none' }}>
+            <Link to="/admin/reserve">
+                <div className="card-body-2">
+                    <div>
+                        <img src={`/public/images/${data.img_name}`} alt="room" />
+                    </div>
+                    <div className="card-title">
+                        <span className='room-title'>{data.room_name}</span>
+                        <span className='room-availability'></span>
+                    </div>
+                </div>
+            </Link>
+        </div>
+    ));
 
     return (
         <div className="home-container">
@@ -47,176 +57,8 @@ const Home = () => {
                     </Dropdown>
                 </div>
             </div>
-
             <div className="card-container">
-                {/* PTC BLDG */}
-
-                <div className="card" style={{ display: filterCardsByBuilding('ITS BLDG') ? 'block' : 'none' }}>
-                    <Link to="/admin/reserve">
-                        <div className="card-body-2">
-                            <div>
-                                <img src="/public/images/ITS 200.jpg" alt="" />
-                            </div>
-                            <div className="card-title">
-                                <span className='room-title'>ITS 200</span>
-                                <span className='room-availability'>Available</span>
-                            </div>
-                        </div>
-                    </Link>
-                </div>
-
-                <div className="card" style={{ display: filterCardsByBuilding('ITS BLDG') ? 'block' : 'none' }}>
-                    <Link to="/admin/reserve">
-                        <div className="card-body-2">
-                            <div>
-                                <img src="/public/images/ITS 201.jpg" alt="" />
-                            </div>
-                            <div className="card-title">
-                                <span className='room-title'>ITS 201</span>
-                                <span className='room-availability'>Available</span>
-                            </div>
-                        </div>
-                    </Link>
-                </div>
-
-                <div className="card" style={{ display: filterCardsByBuilding('PTC BLDG') ? 'block' : 'none' }}>
-                    <Link to="/admin/reserve">
-                        <div className="card-body-2">
-                            <div>
-                                <img src="/public/images/PTC 301.jpg" alt="" />
-                            </div>
-                            <div className="card-title">
-                                <span className='room-title'>PTC 301</span>
-                                <span className='room-availability'>Available</span>
-                            </div>
-                        </div>
-                    </Link>
-                </div>
-
-                <div className="card" style={{ display: filterCardsByBuilding('PTC BLDG') ? 'block' : 'none' }}>
-                    <Link to="/admin/reserve">
-                        <div className="card-body-2">
-                            <div>
-                                <img src="/public/images/PTC 302.jpg" alt="" />
-                            </div>
-                            <div className="card-title">
-                                <span className='room-title'>PTC 302</span>
-                                <span className='room-availability'>Available</span>
-                            </div>
-                        </div>
-                    </Link>
-                </div>
-
-                <div className="card" style={{ display: filterCardsByBuilding('PTC BLDG') ? 'block' : 'none' }}>
-                    <Link to="/admin/reserve">
-                        <div className="card-body-2">
-                            <div>
-                                <img src="/public/images/PTC 303.jpg" alt="" />
-                            </div>
-                            <div className="card-title">
-                                <span className='room-title'>PTC 303</span>
-                                <span className='room-availability'>Available</span>
-                            </div>
-                        </div>
-                    </Link>
-                </div>
-
-
-                {/* ITS BLDG */}
-
-                <div className="card" style={{ display: filterCardsByBuilding('PTC BLDG') ? 'block' : 'none' }}>
-                    <Link to="/admin/reserve">
-                        <div className="card-body-2">
-                            <div>
-                                <img src="/public/images/PTC 304.jpg" alt="" />
-                            </div>
-                            <div className="card-title">
-                                <span className='room-title'>PTC 304</span>
-                                <span className='room-availability'>Available</span>
-                            </div>
-                        </div>
-                    </Link>
-                </div>
-                <div className="card" style={{ display: filterCardsByBuilding('PTC BLDG') ? 'block' : 'none' }}>
-                    <Link to="/admin/reserve">
-                        <div className="card-body-2">
-                            <div>
-                                <img src="/public/images/PTC 305.jpg" alt="" />
-                            </div>
-                            <div className="card-title">
-                                <span className='room-title'>PTC 305</span>
-                                <span className='room-availability'>Available</span>
-                            </div>
-                        </div>
-                    </Link>
-                </div>
-
-                <div className="card" style={{ display: filterCardsByBuilding('PTC BLDG') ? 'block' : 'none' }}>
-                    <Link to="/admin/reserve">
-                        <div className="card-body-2">
-                            <div>
-                                <img src="/public/images/PTC 306.jpg" alt="" />
-                            </div>
-                            <div className="card-title">
-                                <span className='room-title'>PTC 306</span>
-                                <span className='room-availability'>Available</span>
-                            </div>
-                        </div>
-                    </Link>
-                </div>
-                <div className="card" style={{ display: filterCardsByBuilding('PTC BLDG') ? 'block' : 'none' }}>
-                    <Link to="/admin/reserve">
-                        <div className="card-body-2">
-                            <div>
-                                <img src="/public/images/PTC 403.jpg" alt="" />
-                            </div>
-                            <div className="card-title">
-                                <span className='room-title'>PTC 403</span>
-                                <span className='room-availability'>Available</span>
-                            </div>
-                        </div>
-                    </Link>
-                </div>
-                <div className="card" style={{ display: filterCardsByBuilding('PTC BLDG') ? 'block' : 'none' }}>
-                    <Link to="/admin/reserve">
-                        <div className="card-body-2">
-                            <div>
-                                <img src="/public/images/PTC 404.jpg" alt="" />
-                            </div>
-                            <div className="card-title">
-                                <span className='room-title'>PTC 404</span>
-                                <span className='room-availability'>Available</span>
-                            </div>
-                        </div>
-                    </Link>
-                </div>
-                <div className="card" style={{ display: filterCardsByBuilding('PTC BLDG') ? 'block' : 'none' }}>
-                    <Link to="/admin/reserve">
-                        <div className="card-body-2">
-                            <div>
-                                <img src="/public/images/PTC 405.jpg" alt="" />
-                            </div>
-                            <div className="card-title">
-                                <span className='room-title'>PTC 405</span>
-                                <span className='room-availability'>Available</span>
-                            </div>
-                        </div>
-                    </Link>
-                </div>
-                <div className="card" style={{ display: filterCardsByBuilding('PTC BLDG') ? 'block' : 'none' }}>
-                    <Link to="/admin/reserve">
-                        <div className="card-body-2">
-                            <div>
-                                <img src="/public/images/PTC 406.jpg" alt="" />
-                            </div>
-                            <div className="card-title">
-                                <span className='room-title'>PTC 406</span>
-                                <span className='room-availability'>Available</span>
-                            </div>
-                        </div>
-                    </Link>
-                </div>
-
+                {cards}
             </div>
         </div>
     );
