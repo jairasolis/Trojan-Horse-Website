@@ -24,6 +24,7 @@ import AdminLogin from './pages/admin pages/login/TeacherLogin';
 import Login from './pages/student pages/login/Login';
 import StudentSignup from './pages/student pages/signup/StudentSignup';
 import StudentHome from './pages/student pages/home/Home';
+import RoomPage from './pages/student pages/room';
 
 function App() {
   return (
@@ -50,7 +51,7 @@ function App() {
           {/* admin pages */}
           <Route element={<StudentLayout />} path="/student">
             <Route path="home" element={<StudentHome />} />
-            <Route path="reserve" Component={Reserve}/>
+            <Route path="room" Component={RoomPage}/>
           </Route>
         </Routes>
       </BrowserRouter>

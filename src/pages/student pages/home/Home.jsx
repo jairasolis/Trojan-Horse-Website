@@ -26,7 +26,7 @@ const Home = () => {
     function CardComponent(props){
         const [building_name, room_number] = props.room_name.split(" ");
         return (
-            <div className="card" style={{ display: filterCardsByBuilding('PTC BLDG') ? 'block' : 'none' }}>
+            <div className="card" style={{ display: filterCardsByBuilding(`${building_name} BLDG`) ? 'block' : 'none' }}>
                 <Link to={`/student/reserve/${building_name}/${room_number}`}>
                     <div className="card-body-2">
                         <div>
@@ -38,7 +38,7 @@ const Home = () => {
             </div>
         )
     }
-    console.log(PTCRoomsJSON);
+    
 
     return (
         <div className="home-container">
