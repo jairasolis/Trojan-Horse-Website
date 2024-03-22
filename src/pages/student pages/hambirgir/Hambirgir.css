@@ -1,0 +1,34 @@
+#root-hambirgir{
+    margin-top:70px;
+}
+#student-body{
+    min-height: calc(100vh - 70px);
+    background-color: #EBEBEB;
+    padding:calc(2vh + 50px) calc(4vw + 4% + 10px);
+    display: flex;
+    flex-flow:column nowrap;
+    row-gap:calc(6px + 1vh);   
+}
+.content-section{
+    display:inline-flex;
+    flex-flow:column wrap;
+    background-color: white;
+    border-radius:calc(3px + 0.5vmin);
+    min-height:calc(50px + 10vh);
+    --pad-y:calc(0.5vmin + 5px);
+    padding:var(--pad-y) calc(0.33vmin + 0.25vw + 5px) calc(var(--pad-y) * 1.75) calc(1vmin + 0.44vw + 5px);
+    box-shadow: 1px 2px 4px 0px grey;
+    row-gap:calc(2px + 0.5vh);
+}
+.heading-title{
+    font-size:calc(1rem + 1vmin);
+    font-weight: 600;
+    margin-block:0.5vh;
+}
+.heading-subtitle{
+    font-size:calc(0.75rem + 0.75vmin);
+    margin-block:0.25vh;
+}
+.content-list{
+    list-style-type: lower-alpha;
+}

@@ -19,27 +19,34 @@ import Confirmation from "./pages/admin pages/reservation forms/Confirmation";
 
 // student pages
 import Login from './pages/student pages/login/Login';
+import StudentHome from "./pages/student pages/home";
 import StudentSignup from './pages/student pages/signup/StudentSignup';
 import AdminSignup from './pages/admin pages/signup/AdminSignup'
+import StudentLayout from './layouts/StudentLayout/StudentLayout';
+import Hambirgir from './pages/student pages/hambirgir';
 
 function App() {
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Loginpagelayout />} >
-            <Route index element={<Login />} />
-            <Route path='SignupLayout' element={<Signuplayout />} />
-            <Route path="StudentSignup" element={<StudentSignup />} />
-            <Route path="AdminSignup" element={<AdminSignup />} />
+          <Route path="/" element={<Loginpagelayout />} >
+            <Route index Component={Login} />
+            <Route path='SignupLayout' Component={Signuplayout} />
+            <Route path="StudentSignup" Component={StudentSignup} />
+            <Route path="AdminSignup" Component={AdminSignup} />
           </Route>
           {/* admin pages */}
-          <Route element={<AdminLayout />}>
-            <Route path="/admin/home" element={<Home />} />
-            <Route path="/admin/reserved-classrooms" element={<ReservedRooms />} />
-            <Route path="/admin/reserve" element={<Reserve />} />
-            <Route path="/admin/set-activity" element={<SetActivity />} />
-            <Route path="/admin/reservation-confirmation" element={<Confirmation />} />
+          <Route element={<AdminLayout />} path="/admin">
+            <Route path="home" Component={Home} />
+            <Route path="reserved-classrooms" Component={ReservedRooms} />
+            <Route path="reserve" element={<Reserve />} />
+            <Route path="set-activity" element={<SetActivity />} />
+            <Route path="reservation-confirmation" element={<Confirmation />} />
+          </Route>
+          <Route Component={StudentLayout} path="/student">
+            <Route path="home" Component={StudentHome}/>
+            <Route path="hambirgir" Component={Hambirgir}/>
           </Route>
         </Routes>
       </BrowserRouter>

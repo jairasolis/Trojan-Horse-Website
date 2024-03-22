@@ -1,9 +1,11 @@
 import React from 'react'
-
-const Home = () => {
+import Navbar from '../../nav/Navbar'
+export default function Home(props){
     return (
-        <div>Home</div>
+        <div id="student-home">
+            <main role='main' id="student-body">
+
+            </main>
+        </div>
     )
 }
-
-export default Home
