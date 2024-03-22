@@ -1,13 +1,13 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom';
-import Navbar from '../../pages/nav/Navbar'
+import Studentnav from '../../pages/studentnav/Studentnav'
 
 
 const AdminLayout = () => {
-  return (  
+  return (
     <div>
-      <Navbar/>
-      <Outlet/>
+      <Studentnav />
+      <Outlet />
     </div>
   )
 }
