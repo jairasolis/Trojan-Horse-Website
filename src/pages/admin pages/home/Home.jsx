@@ -51,49 +51,6 @@ const Home = () => {
             <div className="card-container">
                 {/* PTC BLDG */}
 
-                <div className="card" style={{ display: filterCardsByBuilding('PTC BLDG') ? 'block' : 'none' }}>
-                    <Link to="/admin/reserve">
-                        <div className="card-body">
-                            <h5 className="card-title">PTC 301</h5>
-                        </div>
-                    </Link>
-                </div>
-
-                <div className="card" style={{ display: filterCardsByBuilding('PTC BLDG') ? 'block' : 'none' }}>
-                    <Link to="/admin/reserve">
-                        <div className="card-body">
-                            <h5 className="card-title">PTC 302</h5>
-                        </div>
-                    </Link>
-                </div>
-
-                <div className="card" style={{ display: filterCardsByBuilding('PTC BLDG') ? 'block' : 'none' }}>
-                    <Link to="/admin/reserve">
-                        <div className="card-body">
-                            <h5 className="card-title">PTC 303</h5>
-                        </div>
-                    </Link>
-                </div>
-
-                <div className="card" style={{ display: filterCardsByBuilding('PTC BLDG') ? 'block' : 'none' }}>
-                    <Link to="/admin/reserve">
-                        <div className="card-body">
-                            <h5 className="card-title">PTC 304</h5>
-                        </div>
-                    </Link>
-                </div>
-
-                <div className="card" style={{ display: filterCardsByBuilding('PTC BLDG') ? 'block' : 'none' }}>
-                    <Link to="/admin/reserve">
-                        <div className="card-body">
-                            <h5 className="card-title">PTC 305</h5>
-                        </div>
-                    </Link>
-                </div>
-
-
-                {/* ITS BLDG */}
-
                 <div className="card" style={{ display: filterCardsByBuilding('ITS BLDG') ? 'block' : 'none' }}>
                     <Link to="/admin/reserve">
                         <div className="card-body-2">
@@ -107,13 +64,159 @@ const Home = () => {
                         </div>
                     </Link>
                 </div>
+
                 <div className="card" style={{ display: filterCardsByBuilding('ITS BLDG') ? 'block' : 'none' }}>
                     <Link to="/admin/reserve">
-                        <div className="card-body">
-                            <h5 className="card-title">ITS 201</h5>
+                        <div className="card-body-2">
+                            <div>
+                                <img src="/public/images/ITS 201.jpg" alt="" />
+                            </div>
+                            <div className="card-title">
+                                <span className='room-title'>ITS 201</span>
+                                <span className='room-availability'>Available</span>
+                            </div>
                         </div>
                     </Link>
                 </div>
+
+                <div className="card" style={{ display: filterCardsByBuilding('PTC BLDG') ? 'block' : 'none' }}>
+                    <Link to="/admin/reserve">
+                        <div className="card-body-2">
+                            <div>
+                                <img src="/public/images/PTC 301.jpg" alt="" />
+                            </div>
+                            <div className="card-title">
+                                <span className='room-title'>PTC 301</span>
+                                <span className='room-availability'>Available</span>
+                            </div>
+                        </div>
+                    </Link>
+                </div>
+
+                <div className="card" style={{ display: filterCardsByBuilding('PTC BLDG') ? 'block' : 'none' }}>
+                    <Link to="/admin/reserve">
+                        <div className="card-body-2">
+                            <div>
+                                <img src="/public/images/PTC 302.jpg" alt="" />
+                            </div>
+                            <div className="card-title">
+                                <span className='room-title'>PTC 302</span>
+                                <span className='room-availability'>Available</span>
+                            </div>
+                        </div>
+                    </Link>
+                </div>
+
+                <div className="card" style={{ display: filterCardsByBuilding('PTC BLDG') ? 'block' : 'none' }}>
+                    <Link to="/admin/reserve">
+                        <div className="card-body-2">
+                            <div>
+                                <img src="/public/images/PTC 303.jpg" alt="" />
+                            </div>
+                            <div className="card-title">
+                                <span className='room-title'>PTC 303</span>
+                                <span className='room-availability'>Available</span>
+                            </div>
+                        </div>
+                    </Link>
+                </div>
+
+
+                {/* ITS BLDG */}
+
+                <div className="card" style={{ display: filterCardsByBuilding('PTC BLDG') ? 'block' : 'none' }}>
+                    <Link to="/admin/reserve">
+                        <div className="card-body-2">
+                            <div>
+                                <img src="/public/images/PTC 304.jpg" alt="" />
+                            </div>
+                            <div className="card-title">
+                                <span className='room-title'>PTC 304</span>
+                                <span className='room-availability'>Available</span>
+                            </div>
+                        </div>
+                    </Link>
+                </div>
+                <div className="card" style={{ display: filterCardsByBuilding('PTC BLDG') ? 'block' : 'none' }}>
+                    <Link to="/admin/reserve">
+                        <div className="card-body-2">
+                            <div>
+                                <img src="/public/images/PTC 305.jpg" alt="" />
+                            </div>
+                            <div className="card-title">
+                                <span className='room-title'>PTC 305</span>
+                                <span className='room-availability'>Available</span>
+                            </div>
+                        </div>
+                    </Link>
+                </div>
+
+                <div className="card" style={{ display: filterCardsByBuilding('PTC BLDG') ? 'block' : 'none' }}>
+                    <Link to="/admin/reserve">
+                        <div className="card-body-2">
+                            <div>
+                                <img src="/public/images/PTC 306.jpg" alt="" />
+                            </div>
+                            <div className="card-title">
+                                <span className='room-title'>PTC 306</span>
+                                <span className='room-availability'>Available</span>
+                            </div>
+                        </div>
+                    </Link>
+                </div>
+                <div className="card" style={{ display: filterCardsByBuilding('PTC BLDG') ? 'block' : 'none' }}>
+                    <Link to="/admin/reserve">
+                        <div className="card-body-2">
+                            <div>
+                                <img src="/public/images/PTC 403.jpg" alt="" />
+                            </div>
+                            <div className="card-title">
+                                <span className='room-title'>PTC 403</span>
+                                <span className='room-availability'>Available</span>
+                            </div>
+                        </div>
+                    </Link>
+                </div>
+                <div className="card" style={{ display: filterCardsByBuilding('PTC BLDG') ? 'block' : 'none' }}>
+                    <Link to="/admin/reserve">
+                        <div className="card-body-2">
+                            <div>
+                                <img src="/public/images/PTC 404.jpg" alt="" />
+                            </div>
+                            <div className="card-title">
+                                <span className='room-title'>PTC 404</span>
+                                <span className='room-availability'>Available</span>
+                            </div>
+                        </div>
+                    </Link>
+                </div>
+                <div className="card" style={{ display: filterCardsByBuilding('PTC BLDG') ? 'block' : 'none' }}>
+                    <Link to="/admin/reserve">
+                        <div className="card-body-2">
+                            <div>
+                                <img src="/public/images/PTC 405.jpg" alt="" />
+                            </div>
+                            <div className="card-title">
+                                <span className='room-title'>PTC 405</span>
+                                <span className='room-availability'>Available</span>
+                            </div>
+                        </div>
+                    </Link>
+                </div>
+                <div className="card" style={{ display: filterCardsByBuilding('PTC BLDG') ? 'block' : 'none' }}>
+                    <Link to="/admin/reserve">
+                        <div className="card-body-2">
+                            <div>
+                                <img src="/public/images/PTC 406.jpg" alt="" />
+                            </div>
+                            <div className="card-title">
+                                <span className='room-title'>PTC 406</span>
+                                <span className='room-availability'>Available</span>
+                            </div>
+                        </div>
+                    </Link>
+                </div>
+
             </div>
         </div>
     );
