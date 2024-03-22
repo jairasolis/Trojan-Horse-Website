@@ -36,7 +36,7 @@
 
 .login-page input {
     width: 350px;
-    height: 50px;
+    height: 45px;
     border-radius: 10px;
     margin-bottom: 15px;
     background-color: #D9D9D9;
@@ -54,7 +54,7 @@
 .login-page button {
     background-color: #2C5225;
     width: 350px;
-    height: 55px;
+    height: 40px;
     border-radius: 10px;
     color: #FFFFFF;
     border: 0;

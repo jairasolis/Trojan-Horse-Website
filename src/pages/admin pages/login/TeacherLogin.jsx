@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom"
-import "./Login.css"
 import axios from 'axios';
 
 
-const Login = () => {
+const TeacherLogin = () => {
     const [form, setForm] = useState({
         email: "",
         password: "",
@@ -50,7 +49,7 @@ const Login = () => {
         if (isValid) {
             try {
                 const response = await axios.post(
-                    "http://127.0.0.1:8000/api/auth/student/login",
+                    "http://127.0.0.1:8000/api/auth/teacher/login",
                     form
                 );
 
@@ -84,4 +83,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default TeacherLogin
