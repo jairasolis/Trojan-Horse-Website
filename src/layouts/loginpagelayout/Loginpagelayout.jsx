@@ -8,7 +8,9 @@ const Loginpagelayout = () => {
         <section className='login-layout'>
             <div className='login-layout-content'>
                 <div className="row">
-                    <div className='col-6 phinma-location-container'></div>
+                    <div className='col-6 phinma-location'>
+                        <img src="/public/images/phinmalocation.png" alt="phinma location" />
+                    </div>
                     <Outlet />
                 </div>
             </div>

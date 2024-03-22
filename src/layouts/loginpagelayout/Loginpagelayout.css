@@ -1,50 +1,80 @@
-body {
-    font-family: "Raleway", sans-serif;
-}
-.login-layout{
+.login-layout {
     position: relative;
     overflow: hidden;
 }
-.phinma-location-container {
+
+.phinma-logo img {
+    width: 100%;
+}
+
+.phinma-location img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+/* .phinma-location-container {
     width: 100%;
     height: 100vh;
     background-image: url('/public/images/phinmalocation.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-.phinma-logo{
+} */
+.phinma-logo {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center; 
+    text-align: center;
 }
-.phinma-logo img{
-    width: 369px;
-    height: 365px;
+
+.phinma-logo img {
+    width: 200px;
+    height: 200px;
 }
-.login-page input{
-    width: 429px;
-    height: 69px;
+
+.login-page input {
+    width: 350px;
+    height: 50px;
     border-radius: 10px;
-    margin-bottom: 28px;
+    margin-bottom: 15px;
     background-color: #D9D9D9;
     border: 0;
     padding: 0px 22px;
     font-size: 15px;
 }
+
 .login-page input::placeholder {
     color: #000000;
     font-family: "Raleway";
     font-weight: 300;
 }
-.login-page button{
+
+.login-page button {
     background-color: #2C5225;
-    width: 200px;
-    height: 69px;
+    width: 350px;
+    height: 55px;
     border-radius: 10px;
     color: #FFFFFF;
     border: 0;
-    font-size: 24px;
+    font-size: 20px;
+}
+
+.login-span {
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.register-span {
+    font-weight: 600;
+    color: #2C5225;
+    text-decoration: none;
+}
+
+.login-page label {
+    display: block;
+    text-align: left;
+    margin-bottom: 0;
+    font-weight: 500;
 }
