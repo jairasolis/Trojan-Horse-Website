@@ -38,7 +38,6 @@ const Home = () => {
     return (
         <div className="home-container">
             <div className="padding-top"></div>
-
             <div className="classroom-dropdown-container">
                 <div className="text-container">
                     <h1>Classrooms</h1>
