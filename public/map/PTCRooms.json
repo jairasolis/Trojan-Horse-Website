@@ -1,0 +1,45 @@
+[
+    {
+        "room_name" : "ITS 200",
+        "img_name" : "ITS 200.jpg"
+    },
+    
+    {
+        "room_name" : "ITS 201",
+        "img_name" : "ITS 201.jpg"
+    },
+    
+    {
+        "room_name" : "PTC 301",
+        "img_name" : "PTC 301.jpg"
+    },
+    
+    {
+        "room_name" : "PTC 302",
+        "img_name" : "PTC 302.jpg"
+    },
+    
+    {
+        "room_name" : "PTC 303",
+        "img_name" : "PTC 303.jpg"
+    },
+    
+    {
+        "room_name" : "PTC 306",
+        "img_name" : "PTC 306.jpg"
+    },
+    
+    {
+        "room_name" : "PTC 403",
+        "img_name" : "PTC 403.jpg"
+    },
+    {
+        "room_name" : "PTC 405",
+        "img_name" : "PTC 405.jpg"
+    },
+    {
+        "room_name" : "PTC 406",
+        "img_name" : "PTC 406.jpg"
+    }
+    
+]
