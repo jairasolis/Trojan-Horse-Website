@@ -19,7 +19,7 @@ const Reserve = () => {
   return (
     <div className="reserve-page">
       <Container className='reserve-form-container'>
-        <Row className="align-items-center justify-content-center reserve-row">
+        <Row className="align-items-center justify-content-center reserve-row reserve-form-content">
           <Row className='reserve-header mb-4'>
             <Col md={12}>
               <h3>Reserve Classroom</h3>
@@ -27,8 +27,8 @@ const Reserve = () => {
           </Row>
 
 
-            <Row className=''>
-              <Col md={6}>
+            <Row className='main-reserve-form'>
+              <Col md={6} className='student-details'>
                 <Form.Group className="mb-3" controlId="student-program">
                   <Form.Label>Student Program</Form.Label>
                   <Form.Control as="select" style={{ width: '400px', backgroundColor: '#F4F4F4' }}>
@@ -80,15 +80,15 @@ const Reserve = () => {
                   </Form.Control>
                 </Form.Group>
               </Col>
-              <Col md={6} className="d-flex flex-column">
+              <Col md={6} className="d-flex flex-column reserve-date-container">
                 <p> Choose date and time: </p>
-                <BasicDateTimePicker />
+                <BasicDateTimePicker/>
               </Col>
             </Row>
             <Row className=''>
               <Col md={6}>
               </Col>
-              <Col>
+              <Col className='reserve-buttons-container'>
                 <div className="reserve-buttons d-flex justify-content-end">
                   <Button className='go-back-button' style={{backgroundColor: '#E6E6E6', border: 'none', color: '#414141'}} onClick={handleBackClick}>Go back</Button>
                   <Button className='next-button' style={{backgroundColor: '#2C5225', border: 'none'}} onClick={handleNextClick}>Next</Button>

@@ -27,4 +27,60 @@
 .reserve-buttons Button {
     width: 140px;
 }
-
+/* below medium desktop screen */
+@media screen and (max-width:1024px){
+    .reserve-header{
+        text-align: center;
+    }
+    .reserve-form-content {
+        align-items: center;
+    }
+    .reserve-date-container{
+        width: 100%!important;
+        margin-block:10px 10px;
+        display: inline-flex;
+        flex-flow:row wrap!important;
+        justify-content:center ;
+    }
+    .reserve-date-container p {
+        text-align: center;
+    }
+    .student-details{
+        display:flex;
+        flex-flow:column nowrap;
+        width: 100%!important;
+        align-items: center!important;
+    }
+    .css-a643pv-MuiStack-root{
+        display:inline-flex;
+        flex-flow:column nowrap;
+        align-items: center;
+    }
+    .reserve-buttons-container{
+        display: flex;
+        flex-flow:column nowrap;
+        align-items: center!important;
+    }
+}
+/* wide mobile screen */
+@media screen and (max-width:768px){
+    .navbar-toggler{
+        order: 1!important;
+        align-self: flex-start;
+    }
+}
+/* large mobile screen */
+@media screen and (max-width:425px) {
+    
+}
+/* medium mobile screen */
+@media screen and (max-width:425px) {
+    html{
+        min-width:425px;
+    }
+    
+}
+/* small mobile screen */
+@media screen and (max-width:320px) {
+    
+}

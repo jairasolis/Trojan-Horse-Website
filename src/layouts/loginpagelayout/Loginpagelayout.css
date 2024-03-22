@@ -97,7 +97,35 @@
     transform: scale(1.05, 1.05);
 
 }
+/* below medium desktop screen */
+@media screen and (max-width:1024px){
 
+}
+/* wide mobile screen */
+@media screen and (max-width:768px){
+    .phinma-location{
+        display: none!important;
+    }
+    .phinma-logo{
+        width:100%!important;
+        min-height:100vh;
+    }
+}
+/* large mobile screen */
+@media screen and (max-width:425px) {
+    
+}
+/* medium mobile screen */
+@media screen and (max-width:425px) {
+    html{
+        min-width:425px;
+    }
+    
+}
+/* small mobile screen */
+@media screen and (max-width:320px) {
+    
+}
 @keyframes fade-customized {
     0% {
         opacity: 0;
