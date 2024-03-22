@@ -13,7 +13,6 @@
     align-items: center;
     justify-content: center;
     height: 100%;
-    background-color: #EBEBEB;
 
 }
 
@@ -23,7 +22,7 @@
 
 .dropdown-container .dropdown .btn {
     background-color: #FFFFFF;
-    color: #414141;
+    color: rgb(255, 255, 255);
     border: none;
     width: 180px;
     height: 50px;

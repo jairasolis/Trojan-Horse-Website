@@ -1,7 +1,12 @@
 .navbar {
-    background-color: #FFFFFF;
-    height: 70px;
+    height: 90px;
     z-index: 1000;
+    
+}
+.logo{
+    padding-left: 25px;
+    width: 260px;
+    height: 65px;
 }
 .navbar-brand {
     padding-left: 20px;
@@ -13,6 +18,7 @@
     flex-grow: 1;
     font-weight: bold;
     font-size: 16px;
+    
 
 }
 .navbar-brand {
@@ -20,8 +26,16 @@
 }
 .navbar-nav.flex-row .nav-item {
     margin-right: 80px;
+    
 }
 .nav-item .nav-link:hover{
     color: #499C39;
 
+}
+.navbar-toggler .navbar-toggler-icon {
+    color: white;
+}
+
+.nav-item .nav-link{
+    color: grey;
 }

@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <nav className="navbar bg-body-tertiary fixed-top">
       <div className="container-fluid">
-        <Link to="/admin/home" className="navbar-brand">Classroom Availability</Link>
+      <img className='logo' src="/public/images/logo.png" alt="phinmalogo" />
         <ul className="navbar-nav flex-row">
           <li className="nav-item">
             <Link to="/admin/home" className="nav-link">Available Classrooms</Link>
