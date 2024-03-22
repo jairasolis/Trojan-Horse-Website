@@ -71,17 +71,6 @@ export default function Hambirgir(props){
                     Write neatly and legibly, ensuring that your handwriting is clean and easily readable.
                     </>
             </ContentSection2>
-            <ContentSection2
-                contentTitle={"ITE 300"}
-                subtitle={"Project Proposal"}
-                >
-                    <>
-                    Provide clear and bright images of your completed activities. Avoid any blurriness or low lighting that may hinder visibility.
-                    </>
-                    <>
-                    Write neatly and legibly, ensuring that your handwriting is clean and easily readable.
-                    </>
-            </ContentSection2>
         </main>
     </div>
     );
