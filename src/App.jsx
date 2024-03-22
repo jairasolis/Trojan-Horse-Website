@@ -51,7 +51,7 @@ function App() {
           {/* admin pages */}
           <Route element={<StudentLayout />} path="/student">
             <Route path="home" element={<StudentHome />} />
-            <Route path="room" Component={RoomPage} />
+            <Route path="room/:bldgName/:bldgNumber" Component={RoomPage}/>
           </Route>
         </Routes>
       </BrowserRouter>

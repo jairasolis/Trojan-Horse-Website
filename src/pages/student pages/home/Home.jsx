@@ -27,7 +27,7 @@ const Home = () => {
         const [building_name, room_number] = props.room_name.split(" ");
         return (
             <div className="card" style={{ display: filterCardsByBuilding(`${building_name} BLDG`) ? 'block' : 'none' }}>
-                <Link to={`/student/reserve/${building_name}/${room_number}`}>
+                <Link to={`/student/room/${building_name}/${room_number}`}>
                     <div className="card-body-2">
                         <div>
                             <img src={`/public/images/${props.img_name}`} alt={props.img_name} />
