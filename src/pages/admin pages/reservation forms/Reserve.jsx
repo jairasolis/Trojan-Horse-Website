@@ -86,7 +86,7 @@ const Reserve = () => {
               </Col>
             </Row>
             <Row className=''>
-              <Col md={6}>
+              <Col md={6} className='blank-space-ts'>
               </Col>
               <Col className='reserve-buttons-container'>
                 <div className="reserve-buttons d-flex justify-content-end">
