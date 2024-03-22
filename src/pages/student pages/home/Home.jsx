@@ -1,11 +1,37 @@
-import React from 'react'
-import Navbar from '../../nav/Navbar'
-export default function Home(props){
-    return (
-        <div id="student-home">
-            <main role='main' id="student-body">
+import React, { useState } from 'react'
 
-            </main>
+export default function Home(props){
+    const [clsRooms, setClsRooms] = useState({});
+    return (
+        <div
+            id="student-home"
+        >
+            <header
+                id="root-header"
+                className={
+                    `flex flex-row items-center`
+                }
+                >
+                    <div
+                        id="header-heading"
+                        className={
+                            `inline-flex flex-row items-center`
+                        }
+                    >
+                        <div id="heading-title-container">
+
+                        </div>
+                        <div id="heading-title-description">
+
+                        </div>
+                    </div>
+                    <nav id="header-nav">
+                        <div id="burger-container">
+
+                        </div>
+                    </nav>
+            </header>
         </div>
     )
+
 }

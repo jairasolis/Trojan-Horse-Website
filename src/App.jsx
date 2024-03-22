@@ -30,23 +30,23 @@ function App() {
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Loginpagelayout />} >
-            <Route index Component={Login} />
+          <Route path="/" Component={Loginpagelayout} >
+            <Route index element={<Login/>} />
             <Route path='SignupLayout' Component={Signuplayout} />
             <Route path="StudentSignup" Component={StudentSignup} />
             <Route path="AdminSignup" Component={AdminSignup} />
           </Route>
           {/* admin pages */}
           <Route element={<AdminLayout />} path="/admin">
-            <Route path="home" Component={Home} />
-            <Route path="reserved-classrooms" Component={ReservedRooms} />
-            <Route path="reserve" element={<Reserve />} />
-            <Route path="set-activity" element={<SetActivity />} />
-            <Route path="reservation-confirmation" element={<Confirmation />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/reserved-classrooms" element={<ReservedRooms />} />
+            <Route path="/reserve" element={<Reserve />} />
+            <Route path="/set-activity" element={<SetActivity />} />
+            <Route path="/reservation-confirmation" element={<Confirmation />} />
           </Route>
-          <Route Component={StudentLayout} path="/student">
-            <Route path="home" Component={StudentHome}/>
-            <Route path="hambirgir" Component={Hambirgir}/>
+          <Route element={<StudentLayout/>} path="/student">
+            <Route path="/" Component={StudentHome}/>
+            <Route path="/login" Component={StudentLogin}/>
           </Route>
         </Routes>
       </BrowserRouter>
