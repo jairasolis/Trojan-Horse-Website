@@ -8,8 +8,8 @@ const SetActivity = () => {
   const navigate = useNavigate();
 
   const handleBackClick = () => {
-    const storedUserData = localStorage.getItem('userData');
-    navigate(`/admin/reserve/${storedUserData}`);
+    const storedClassroomId = localStorage.getItem('selectedClassroomId');
+    navigate(`/admin/reserve/${storedClassroomId}`);
   };
 
   const handleNextClick = () => {

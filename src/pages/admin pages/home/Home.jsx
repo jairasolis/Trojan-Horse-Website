@@ -11,7 +11,9 @@ const Home = () => {
         setSelectedBuilding(building);
         setDropdownOpen(false);
     };
-
+    const handleCardClick = (classroomId) => {
+        localStorage.setItem('selectedClassroomId', classroomId);
+      };
     const filterCardsByBuilding = (building) => {
         if (!selectedBuilding) {
             return true;
@@ -21,7 +23,7 @@ const Home = () => {
 
     const cards = roomData.map(data => (
         <div key={data.classroom_id} className="card" style={{ display: filterCardsByBuilding(data.building) ? 'block' : 'none' }}>
-            <Link to={`/admin/reserve/${data.classroom_id}`}>
+            <Link to={`/admin/reserve/${data.classroom_id}`} className="card-link" onClick={() => handleCardClick(data.classroom_id)}>
                 <div className="card-body-2">
                     <div>
                         <img src={`/public/images/${data.img_name}`} alt="room" />
