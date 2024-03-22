@@ -20,8 +20,8 @@ const Home = () => {
     };
 
     const cards = roomData.map(data => (
-        <div key={data.room_name} className="card" style={{ display: filterCardsByBuilding(data.building) ? 'block' : 'none' }}>
-            <Link to="/admin/reserve">
+        <div key={data.classroom_id} className="card" style={{ display: filterCardsByBuilding(data.building) ? 'block' : 'none' }}>
+            <Link to={`/admin/reserve/${data.classroom_id}`}>
                 <div className="card-body-2">
                     <div>
                         <img src={`/public/images/${data.img_name}`} alt="room" />

@@ -1,5 +1,6 @@
 [
     {
+<<<<<<< HEAD
         "title":"ITS - AC ROOM",
         "room_name" : "ITS 200",
         "img_name" : "ITS 200.jpg"
@@ -33,35 +34,96 @@
         "title":"PTC - AC ROOM",
         "room_name" : "PTC 305",
         "img_name" : "PTC 303.jpg"
+=======
+        "title": "ITS - AC ROOM",
+        "room_name": "ITS 200",
+        "img_name": "ITS 200.jpg",
+        "building": "ITS BLDG",
+        "classroom_id": "1"
+    },
+    {
+        "title": "ITS - AC ROOM",
+        "room_name": "ITS 201",
+        "img_name": "ITS 201.jpg",
+        "building": "ITS BLDG",
+        "classroom_id": "2"
+    },
+    {
+        "title": "PTC - AC ROOM",
+        "room_name": "PTC 301",
+        "img_name": "PTC 301.jpg",
+        "building": "PTC BLDG",
+        "classroom_id": "3"
+    },
+    {
+        "title": "PTC - AC ROOM",
+        "room_name": "PTC 302",
+        "img_name": "PTC 302.jpg",
+        "building": "PTC BLDG",
+        "classroom_id": "4"
+    },
+    {
+        "title": "PTC - AC ROOM",
+        "room_name": "PTC 303",
+        "img_name": "PTC 303.jpg",
+        "building": "PTC BLDG",
+        "classroom_id": "5"
+    },
+    {
+        "title": "PTC - AC ROOM",
+        "room_name": "PTC 304",
+        "img_name": "PTC 304.jpg",
+        "building": "PTC BLDG",
+        "classroom_id": "6"
+    },
+    {
+        "title": "PTC - AC ROOM",
+        "room_name": "PTC 305",
+        "img_name": "PTC 305.jpg",
+        "building": "PTC BLDG",
+        "classroom_id": "7"
+    },
+    {
+        "title": "PTC - AC ROOM",
+        "room_name": "PTC 303",
+        "img_name": "PTC 303.jpg",
+        "building": "PTC BLDG",
+        "classroom_id": "8"
+>>>>>>> 13233f5ceba7e4e15272e3f45d586f629789cf53
     },
     {
         "title": "PTC - AC ROOM",
         "room_name": "PTC 306",
         "img_name": "PTC 306.jpg",
-        "building": "PTC BLDG"
+        "building": "PTC BLDG",
+        "classroom_id": "9"
     },
     {
         "title": "PTC - AC ROOM",
         "room_name": "PTC 403",
         "img_name": "PTC 403.jpg",
-        "building": "PTC BLDG"
+        "building": "PTC BLDG",
+        "classroom_id": "10"
     },
     {
         "title": "PTC - AC ROOM",
         "room_name": "PTC 404",
         "img_name": "PTC 404.jpg",
-        "building": "PTC BLDG"
+        "building": "PTC BLDG",
+        "classroom_id": "11"
     },
     {
         "title": "PTC - AC ROOM",
         "room_name": "PTC 405",
         "img_name": "PTC 405.jpg",
-        "building": "PTC BLDG"
+        "building": "PTC BLDG",
+        "classroom_id": "12"
     },
     {
         "title": "PTC - AC ROOM",
         "room_name": "PTC 406",
         "img_name": "PTC 406.jpg",
-        "building": "PTC BLDG"
+        "building": "PTC BLDG",
+        "classroom_id": "13"
     }
 ]
