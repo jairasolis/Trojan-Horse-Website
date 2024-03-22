@@ -42,7 +42,7 @@ function App() {
           <Route element={<AdminLayout />}>
             <Route path="/admin/home" element={<Home />} />
             <Route path="/admin/reserved-classrooms" element={<ReservedRooms />} />
-            <Route path="/admin/reserve" element={<Reserve />} />
+            <Route path="/admin/reserve/:id" element={<Reserve />} />
             <Route path="/admin/set-activity" element={<SetActivity />} />
             <Route path="/admin/reservation-confirmation" element={<Confirmation />} />
           </Route>
@@ -50,7 +50,7 @@ function App() {
           {/* admin pages */}
           <Route element={<StudentLayout />} path="/student">
             <Route path="home" element={<StudentHome />} />
-            <Route path="reserve" Component={Reserve}/>
+            <Route path="reserve" Component={Reserve} />
           </Route>
         </Routes>
       </BrowserRouter>
