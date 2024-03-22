@@ -9,7 +9,7 @@ import Loginpagelayout from './layouts/loginpagelayout/Loginpagelayout';
 import AdminLayout from './layouts/adminLayout/AdminLayout';
 import ReservedRooms from './pages/admin pages/reserved classrooms/ReservedRooms';
 import Signuplayout from './layouts/signuplayout/Signuplayout';
-
+import Loginaslayout from './layouts/loginaslayout/Loginaslayout'
 
 // admin pages
 import Home from './pages/admin pages/home/Home';
@@ -21,6 +21,7 @@ import Confirmation from "./pages/admin pages/reservation forms/Confirmation";
 import Login from './pages/student pages/login/Login';
 import StudentSignup from './pages/student pages/signup/StudentSignup';
 import AdminSignup from './pages/admin pages/signup/AdminSignup'
+import AdminLogin from './pages/admin pages/login/TeacherLogin';
 
 function App() {
   return (
@@ -28,7 +29,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Loginpagelayout />} >
-            <Route index element={<Login />} />
+          <Route index element={<Loginaslayout />} />
+            <Route path="StudentLogin"  element={<Login />} />
+            <Route path="AdminLogin"  element={<AdminLogin />} />
             <Route path='SignupLayout' element={<Signuplayout />} />
             <Route path="StudentSignup" element={<StudentSignup />} />
             <Route path="AdminSignup" element={<AdminSignup />} />
