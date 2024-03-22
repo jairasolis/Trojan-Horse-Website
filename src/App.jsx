@@ -18,14 +18,12 @@ import Reserve from "./pages/admin pages/reservation forms/Reserve";
 import SetActivity from "./pages/admin pages/reservation forms/SetActivity";
 import Confirmation from "./pages/admin pages/reservation forms/Confirmation";
 import AdminSignup from './pages/admin pages/signup/AdminSignup'
+import AdminLogin from './pages/admin pages/login/TeacherLogin';
 
 // student pages
 import Login from './pages/student pages/login/Login';
-import StudentSignup from './pages/student pages/signup/StudentSignup'
-import StudentHome from './pages/student pages/home/Home';
 import StudentSignup from './pages/student pages/signup/StudentSignup';
-import AdminSignup from './pages/admin pages/signup/AdminSignup'
-import AdminLogin from './pages/admin pages/login/TeacherLogin';
+import StudentHome from './pages/student pages/home/Home';
 
 function App() {
   return (
