@@ -23,7 +23,7 @@ const Home = () => {
 
     const handleCardClick = () => {
         navigate('/admin/reserve');
-      };
+    };
 
     return (
         <div className="home-container">
@@ -47,16 +47,9 @@ const Home = () => {
                     </Dropdown>
                 </div>
             </div>
-            
+
             <div className="card-container">
                 {/* PTC BLDG */}
-                <div className="card" style={{ display: filterCardsByBuilding('PTC BLDG') ? 'block' : 'none' }}>
-                    <Link to="/admin/reserve">
-                        <div className="card-body">
-                            <h5 className="card-title">PTC 201 - AC ROOM</h5>
-                        </div>
-                    </Link>
-                </div>
 
                 <div className="card" style={{ display: filterCardsByBuilding('PTC BLDG') ? 'block' : 'none' }}>
                     <Link to="/admin/reserve">
@@ -97,13 +90,14 @@ const Home = () => {
                         </div>
                     </Link>
                 </div>
-            
+
 
                 {/* ITS BLDG */}
 
                 <div className="card" style={{ display: filterCardsByBuilding('ITS BLDG') ? 'block' : 'none' }}>
                     <Link to="/admin/reserve">
                         <div className="card-body">
+                            <img src="/public/images/ITS 200.jpg" alt="" />
                             <h5 className="card-title">ITS 200</h5>
                         </div>
                     </Link>

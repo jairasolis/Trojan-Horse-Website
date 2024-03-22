@@ -1,6 +1,10 @@
-.error{
-    font-size: 14px;
-    text-align: center;
+.error {
+    font-size: 10px;
+    text-align: left;
     margin-bottom: 20px;
-    color: red;
+    color: white;
+    background-color: rgb(237, 15, 15);
+    width: fit-content;
+    padding: 5px 15px;
+    border-radius: 5px;
 }

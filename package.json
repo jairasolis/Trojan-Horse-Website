@@ -19,6 +19,7 @@
     "@mui/material": "^5.15.14",
     "@mui/styled-engine-sc": "^6.0.0-alpha.17",
     "@mui/x-date-pickers": "^6.19.7",
+    "aos": "^2.3.4",
     "axios": "^1.6.8",
     "bootstrap": "^5.3.3",
     "date-fns": "^3.6.0",

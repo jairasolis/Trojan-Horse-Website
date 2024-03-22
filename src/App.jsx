@@ -18,14 +18,12 @@ import Reserve from "./pages/admin pages/reservation forms/Reserve";
 import SetActivity from "./pages/admin pages/reservation forms/SetActivity";
 import Confirmation from "./pages/admin pages/reservation forms/Confirmation";
 import AdminSignup from './pages/admin pages/signup/AdminSignup'
-
-import AdminLogin from './pages/admin pages/login/TeacherLogin'
+import AdminLogin from './pages/admin pages/login/TeacherLogin';
 
 // student pages
 import Login from './pages/student pages/login/Login';
-
 import StudentSignup from './pages/student pages/signup/StudentSignup';
-import StudentHome from './pages/student pages/home/Home'
+import StudentHome from './pages/student pages/home/Home';
 
 function App() {
   return (
@@ -44,7 +42,7 @@ function App() {
           <Route element={<AdminLayout />}>
             <Route path="/admin/home" element={<Home />} />
             <Route path="/admin/reserved-classrooms" element={<ReservedRooms />} />
-            <Route path="/admin/reserve" element={<Reserve />} />
+            <Route path="/admin/re  sserve" element={<Reserve />} />
             <Route path="/admin/set-activity" element={<SetActivity />} />
             <Route path="/admin/reservation-confirmation" element={<Confirmation />} />
           </Route>

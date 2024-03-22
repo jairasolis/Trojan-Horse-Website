@@ -72,9 +72,112 @@
     text-decoration: none;
 }
 
+.register-span:hover {
+    color: #A98D00;
+    font-weight: 700;
+}
+
 .login-page label {
     display: block;
     text-align: left;
     margin-bottom: 0;
     font-weight: 500;
+}
+
+.phinma-location {
+    animation: fade-left 2s;
+}
+
+.phinma-logo {
+    animation: fade-right 2s;
+}
+
+.phinma-logo button:hover {
+    background-color: #A98D00;
+    transform: scale(1.05, 1.05);
+
+}
+
+@keyframes fade-customized {
+    0% {
+        opacity: 0;
+        transform: translateY(-150px) scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(150px) scale(1);
+    }
+}
+
+@keyframes fade-customized3 {
+    0% {
+        opacity: 0;
+        transform: translateY(-150px) scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes fade-customized2 {
+    0% {
+        opacity: 0;
+        transform: translateX(-650px) scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(-550px, -300px);
+    }
+}
+
+@keyframes fade-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-150px) scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+}
+
+@keyframes fade-up {
+    0% {
+        opacity: 0;
+        transform: translateY(150px) scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+}
+
+@keyframes fade-right {
+    0% {
+        opacity: 0;
+        transform: translateX(150px) scale(1);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
+}
+
+@keyframes fade-left {
+    0% {
+        opacity: 0;
+        transform: translateX(-150px) scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px) scale(1);
+    }
 }

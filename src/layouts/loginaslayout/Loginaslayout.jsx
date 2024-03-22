@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 const Loginaslayout = () => {
     return (
-        <div className='col-6 phinma-logo'>
+        <div className='col-6 phinma-logo' id="loginaslayout">
             <img src="/public/images/phinmalogo.png" alt="phinmalogo" />
             <div className='login-page'>
                 <Link to="/StudentLogin"><button className='mt-5 mb-3'>Student</button></Link>
