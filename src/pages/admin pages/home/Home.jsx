@@ -96,9 +96,14 @@ const Home = () => {
 
                 <div className="card" style={{ display: filterCardsByBuilding('ITS BLDG') ? 'block' : 'none' }}>
                     <Link to="/admin/reserve">
-                        <div className="card-body">
-                            <img src="/public/images/ITS 200.jpg" alt="" />
-                            <h5 className="card-title">ITS 200</h5>
+                        <div className="card-body-2">
+                            <div>
+                                <img src="/public/images/ITS 200.jpg" alt="" />
+                            </div>
+                            <div className="card-title">
+                                <span className='room-title'>ITS 200</span>
+                                <span className='room-availability'>Available</span>
+                            </div>
                         </div>
                     </Link>
                 </div>
