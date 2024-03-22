@@ -119,7 +119,8 @@ const StudentSignup = () => {
                     <br />
                     <input type="password" name="confirm_password" value={form.confirm_password} onChange={handleChange} placeholder='Confirm Password' required />
                     {errors.confirm_password && <div className="error">{errors.confirm_password}</div>}
-                    <button type="submit" className='mb-3 mt-3'>Signup</button>
+                    <br />
+                    <button type="submit" className='mb-3'>Signup</button>
                     <br />
                     <span className='login-span'>You already have an account? <Link to="/" className='text-decoration-none'><span className='register-span'>Login</span></Link></span>
                     {emailExists && <div className="error">Email already exists</div>}
