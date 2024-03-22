@@ -3,6 +3,9 @@ import { Dropdown } from 'react-bootstrap';
 import '../home/Home.css';
 import { Link } from 'react-router-dom';
 import Navbar from '../../nav/Navbar';
+import PTCRoomsJSON from "../../../../public/map/PTCRooms.json";
+
+
 
 const Home = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -20,8 +23,22 @@ const Home = () => {
         }
         return building === selectedBuilding;
     };
-
-
+    function CardComponent(props){
+        const [building_name, room_number] = props.room_name.split(" ");
+        return (
+            <div className="card" style={{ display: filterCardsByBuilding('PTC BLDG') ? 'block' : 'none' }}>
+                <Link to={`/student/reserve/${building_name}/${room_number}`}>
+                    <div className="card-body-2">
+                        <div>
+                            <img src={`/public/images/${props.img_name}`} alt={props.img_name} />
+                        </div>
+                        <h5 className="card-title">{props.title}</h5>
+                    </div>
+                </Link>
+            </div>
+        )
+    }
+    console.log(PTCRoomsJSON);
 
     return (
         <div className="home-container">
@@ -47,56 +64,11 @@ const Home = () => {
             </div>
             
             <div className="card-container">
-                {/* PTC BLDG */}
-                <div className="card" style={{ display: filterCardsByBuilding('PTC BLDG') ? 'block' : 'none' }}>
-                    <div className="card-body">
-                        <h5 className="card-title">PTC 201 - AC ROOM</h5>
-                    </div>
-                </div>
-
-                <div className="card" style={{ display: filterCardsByBuilding('PTC BLDG') ? 'block' : 'none' }}>
-                    <div className="card-body">
-                        <h5 className="card-title">PTC 301</h5>
-                    </div>
-                </div>
-
-                <div className="card" style={{ display: filterCardsByBuilding('PTC BLDG') ? 'block' : 'none' }}>
-                    <div className="card-body">
-                        <h5 className="card-title">PTC 302</h5>
-                    </div>
-                </div>
-
-                <div className="card" style={{ display: filterCardsByBuilding('PTC BLDG') ? 'block' : 'none' }}>
-                    <div className="card-body">
-                        <h5 className="card-title">PTC 303</h5>
-                    </div>
-                </div>
-
-                <div className="card" style={{ display: filterCardsByBuilding('PTC BLDG') ? 'block' : 'none' }}>
-                    <div className="card-body">
-                        <h5 className="card-title">PTC 304</h5>
-                    </div>
-                </div>
-
-                <div className="card" style={{ display: filterCardsByBuilding('PTC BLDG') ? 'block' : 'none' }}>
-                    <div className="card-body">
-                        <h5 className="card-title">PTC 305</h5>
-                    </div>
-                </div>
-            
-
-                {/* ITS BLDG */}
-
-                <div className="card" style={{ display: filterCardsByBuilding('ITS BLDG') ? 'block' : 'none' }}>
-                    <div className="card-body">
-                        <h5 className="card-title">ITS 200</h5>
-                    </div>
-                </div>
-                <div className="card" style={{ display: filterCardsByBuilding('ITS BLDG') ? 'block' : 'none' }}>
-                    <div className="card-body">
-                        <h5 className="card-title">ITS 201</h5>
-                    </div>
-                </div>
+                {
+                    PTCRoomsJSON.map(
+                        (data, index) => <CardComponent title={data.title} img_name={data.img_name} room_name={data.room_name} key={index}/>
+                    )
+                }
             </div>
         </div>
     );

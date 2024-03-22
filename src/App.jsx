@@ -48,8 +48,9 @@ function App() {
           </Route>
 
           {/* admin pages */}
-          <Route element={<StudentLayout />}>
-            <Route path="/student/home" element={<StudentHome />} />
+          <Route element={<StudentLayout />} path="/student">
+            <Route path="home" element={<StudentHome />} />
+            <Route path="reserve" Component={Reserve}/>
           </Route>
         </Routes>
       </BrowserRouter>
