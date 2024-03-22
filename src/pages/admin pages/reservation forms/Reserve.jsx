@@ -11,7 +11,6 @@ const Reserve = () => {
   const [form, setForm] = useState({
     title: "",
     description: "",
-    end_time: "",
     teacher_id: "",
     subject_id: "",
     student_program: "",
@@ -53,14 +52,17 @@ const Reserve = () => {
   };
 
   const handleStartTimeChange = (e) => {
-    const startTime = e.target.value;
-    setForm({ ...form, start_time: startTime });
+    const startTime = new Date(e.target.value);
+    const formattedStartTime = startTime.toISOString().slice(0, 16).replace('T', ' ');
+    setForm({ ...form, start_time: formattedStartTime + ":00" });
   };
-
+  
   const handleEndTimeChange = (e) => {
-    const endTime = e.target.value;
-    setForm({ ...form, end_time: endTime });
+    const endTime = new Date(e.target.value);
+    const formattedEndTime = endTime.toISOString().slice(0, 16).replace('T', ' ');
+    setForm({ ...form, end_time: formattedEndTime + ":00" });
   };
+  
 
   return (
     <div className="reserve-page">
