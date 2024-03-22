@@ -92,11 +92,7 @@ const StudentSignup = () => {
                     <br />
                     <input type="password" name="password" value={form.password} onChange={handleChange} placeholder='Password' required />
                     <br />
-                    <input type="password" name="confirm_password
-                    
-                    
-                    
-                    " value={form.confirm_password} onChange={handleChange} placeholder='Confirm Password' required />
+                    <input type="password" name="confirm_password" value={form.confirm_password} onChange={handleChange} placeholder='Confirm Password' required />
                     <br />
                     {errorMessage && <div className="error">{errorMessage}</div>}
                     <button type="submit" className='mb-3'>Signup</button>

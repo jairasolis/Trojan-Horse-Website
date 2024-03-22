@@ -43,7 +43,7 @@ const Reserve = () => {
   };
 
   const handleNextClick = () => {
-    navigate('/admin/set-activity');
+    navigate('/admin/set-activity', { state: { formData: form } });
   };
 
   const handleFormChange = (e) => {
@@ -127,20 +127,52 @@ const Reserve = () => {
             <Col md={6} className="d-flex flex-column reserve-date-container">
               <Form.Group className="mb-3" controlId="startEndTime">
                 <Form.Label>Start Time</Form.Label>
-                <Form.Control
-                  type="datetime-local"
-                  name="start_time"
-                  value={form.start_time}
-                  onChange={handleStartTimeChange}
-                />
+                <Row>
+                  <Col>
+                    <Form.Control
+                      type="date"
+                      name="start_date"
+                      value={form.start_date}
+                      onChange={handleStartTimeChange}
+                    />
+                  </Col>
+                  <Col>
+                    <Form.Control
+                      as="select"
+                      name="start_time"
+                      value={form.start_time}
+                      onChange={handleStartTimeChange}
+                    >
+                      <option value="" disabled>--select year level--</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                    </Form.Control>
+                  </Col>
+                </Row>
                 <Form.Label className='mt-3'>End Time</Form.Label>
-                <Form.Control
-                  type="datetime-local"
-                  name="end_time"
-                  value={form.end_time}
-                  onChange={handleEndTimeChange}
-                />
+                <Row>
+                  <Col>
+                    <Form.Control
+                      type="date"
+                      name="end_date"
+                      value={form.end_date}
+                      onChange={handleEndTimeChange}
+                    />
+                  </Col>
+                  <br />
+                  <Col>
+                    <Form.Control
+                      type="time"
+                      name="end_time"
+                      value={form.end_time}
+                      onChange={handleEndTimeChange}
+                    />
+                  </Col>
+                </Row>
               </Form.Group>
+
             </Col>
           </Row>
           <Row className=''>
