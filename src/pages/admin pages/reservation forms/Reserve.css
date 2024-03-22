@@ -61,6 +61,9 @@
         flex-flow:column nowrap;
         align-items: center!important;
     }
+    .blank-space-ts{
+        display: none!important;
+    }
 }
 /* wide mobile screen */
 @media screen and (max-width:768px){
@@ -69,9 +72,11 @@
         align-self: flex-start;
     }
 }
-/* large mobile screen */
-@media screen and (max-width:425px) {
-    
+/* arbitrary snap screen */
+@media screen and (max-width:648px) {
+    .navbar-nav{
+        order:3;
+    }
 }
 /* medium mobile screen */
 @media screen and (max-width:425px) {
