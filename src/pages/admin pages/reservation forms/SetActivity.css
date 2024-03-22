@@ -1,0 +1,26 @@
+.set-activity-page {
+    display: flex;
+    top: 70;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+    background-color: #EBEBEB;
+    color: #414141;
+}
+
+span {
+    font-weight: 200;
+}
+
+.set-activity-line {
+    width: 560px;
+    height: 2px;
+    background-color: #41414144;
+}
+
+/* .skip p {
+    position: absolute;
+    top: 140px;
+    right: 160px;
+    text-decoration: underline;
+} */

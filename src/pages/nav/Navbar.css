@@ -1,0 +1,27 @@
+.navbar {
+    background-color: #FFFFFF;
+    height: 70px;
+    z-index: 1000;
+}
+.navbar-brand {
+    padding-left: 20px;
+}
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    font-weight: bold;
+    font-size: 16px;
+
+}
+.navbar-brand {
+    font-weight: bold;
+}
+.navbar-nav.flex-row .nav-item {
+    margin-right: 80px;
+}
+.nav-item .nav-link:hover{
+    color: #499C39;
+
+}
