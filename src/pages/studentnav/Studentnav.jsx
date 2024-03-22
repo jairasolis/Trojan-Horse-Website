@@ -9,10 +9,10 @@ const Studentnav = () => {
                 <img className='logo' src="/public/images/logo.png" alt="phinmalogo" />
                 <ul className="navbar-nav flex-row">
                     <li className="nav-item">
-                        <Link to="/admin/home" className="nav-link">Available Classrooms</Link>
+                        <Link to="/student/home" className="nav-link">Available Classrooms</Link>
                     </li>
                     <li className="nav-item">
-                        <Link to="/admin/reserved-classrooms" className="nav-link">Reserved Classrooms</Link>
+                        <Link to="" className="nav-link">Reserved Classrooms</Link>
                     </li>
                     <li className="nav-item">
                         <Link to="" className="nav-link">Activities</Link>
