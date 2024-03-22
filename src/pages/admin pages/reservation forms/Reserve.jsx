@@ -56,13 +56,13 @@ const Reserve = () => {
     const formattedStartTime = startTime.toISOString().slice(0, 16).replace('T', ' ');
     setForm({ ...form, start_time: formattedStartTime + ":00" });
   };
-  
+
   const handleEndTimeChange = (e) => {
     const endTime = new Date(e.target.value);
     const formattedEndTime = endTime.toISOString().slice(0, 16).replace('T', ' ');
     setForm({ ...form, end_time: formattedEndTime + ":00" });
   };
-  
+
 
   return (
     <div className="reserve-page">
@@ -125,10 +125,22 @@ const Reserve = () => {
               </Form.Group>
             </Col>
             <Col md={6} className="d-flex flex-column reserve-date-container">
-              <p> Start time: </p>
-              <input type="datetime-local" id="startTime" name="startTime" value={form.start_time} onChange={handleStartTimeChange} />
-              <p className='mt-3'> End time: </p>
-              <input type="datetime-local" id="endTime" name="endTime" value={form.end_time} onChange={handleEndTimeChange} />
+              <Form.Group className="mb-3" controlId="startEndTime">
+                <Form.Label>Start Time</Form.Label>
+                <Form.Control
+                  type="datetime-local"
+                  name="start_time"
+                  value={form.start_time}
+                  onChange={handleStartTimeChange}
+                />
+                <Form.Label className='mt-3'>End Time</Form.Label>
+                <Form.Control
+                  type="datetime-local"
+                  name="end_time"
+                  value={form.end_time}
+                  onChange={handleEndTimeChange}
+                />
+              </Form.Group>
             </Col>
           </Row>
           <Row className=''>
