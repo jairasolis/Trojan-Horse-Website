@@ -1,5 +1,40 @@
 [
     {
+<<<<<<< HEAD
+        "title":"ITS - AC ROOM",
+        "room_name" : "ITS 200",
+        "img_name" : "ITS 200.jpg"
+    },
+    {
+        "title":"ITS - AC ROOM",
+        "room_name" : "ITS 201",
+        "img_name" : "ITS 201.jpg"
+    },
+    {
+        "title":"PTC - AC ROOM",
+        "room_name" : "PTC 301",
+        "img_name" : "PTC 301.jpg"
+    },
+    {
+        "title":"PTC - AC ROOM",
+        "room_name" : "PTC 302",
+        "img_name" : "PTC 302.jpg"
+    },
+    {
+        "title":"PTC - AC ROOM",
+        "room_name" : "PTC 303",
+        "img_name" : "PTC 303.jpg"
+    },
+    {
+        "title":"PTC - AC ROOM",
+        "room_name" : "PTC 304",
+        "img_name" : "PTC 303.jpg"
+    },
+    {
+        "title":"PTC - AC ROOM",
+        "room_name" : "PTC 305",
+        "img_name" : "PTC 303.jpg"
+=======
         "title": "ITS - AC ROOM",
         "room_name": "ITS 200",
         "img_name": "ITS 200.jpg",
@@ -54,6 +89,7 @@
         "img_name": "PTC 303.jpg",
         "building": "PTC BLDG",
         "classroom_id": "8"
+>>>>>>> 13233f5ceba7e4e15272e3f45d586f629789cf53
     },
     {
         "title": "PTC - AC ROOM",
