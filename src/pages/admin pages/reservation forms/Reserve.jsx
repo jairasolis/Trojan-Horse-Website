@@ -15,7 +15,7 @@ const Reserve = () => {
     subject: "",
     student_program: "",
     year_level: "",
-    block_number: ["2", "5"],
+    block_number: [],
     start_time: "", // State for start time
     end_time: "" // State for end time
   });
@@ -60,7 +60,7 @@ const Reserve = () => {
 
     if (name === 'block_number') {
       // Set block_number as an array with the first element as empty and the second element as the selected value
-      setForm({ ...form, block_number: ["", value] });
+      setForm({ ...form, block_number: [value] });
     } else {
       setForm({ ...form, [name]: value });
     }
@@ -116,7 +116,7 @@ const Reserve = () => {
               <Form.Group className="mb-3" controlId="student-block">
                 <Form.Label>Student Block</Form.Label>
                 <Form.Control as="select" name="block_number" value={form.block_number} onChange={handleFormChange} required>
-                  <option value="" disabled>--select block--</option>
+                  <option value="" >--select block--</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
