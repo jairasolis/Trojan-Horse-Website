@@ -30,7 +30,7 @@
 
 .card-r {
     width: 300px;
-    height: 200px;
+    height: 230px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -40,7 +40,7 @@
 
 .card-body-r {
     width: 300px;
-    height: 200px;
+    height: 230px;
     border-radius: 10px;
     /* flex: 1;  */
     background-color: #FFFFFF;

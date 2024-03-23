@@ -48,9 +48,9 @@ const ReservedRooms = () => {
                         <p className="card-title-big">{activity.block_number}</p>
                     </div>
                     <div className="text-infos-right">
-                        <p className="card-title-smol">Date</p>
+                        <p className="card-title-smol">Start Time</p>
                         <p className="card-title-big">{activity.start_time}</p>
-                        <p className="card-title-smol">Time</p>
+                        <p className="card-title-smol">End Time</p>
                         <p className="card-title-big">{activity.end_time}</p>
                     </div>
                 </div>
