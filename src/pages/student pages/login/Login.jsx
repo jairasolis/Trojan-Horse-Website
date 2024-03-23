@@ -29,9 +29,9 @@ const Login = () => {
                     form
                 );
                 console.log(response.data);
-                setErrorMessage("");
+                localStorage.setItem('userData', JSON.stringify(response.data));
                 // Redirect user upon successful login
-                window.location.href = "/Student/Home";
+                // window.location.href = "/Student/Home";
             } catch (error) {
                 if (error.response && error.response.status === 422) {
                     console.error("Unauthorized: Incorrect email or password");
