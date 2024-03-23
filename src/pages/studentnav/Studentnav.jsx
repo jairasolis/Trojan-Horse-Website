@@ -11,11 +11,11 @@ const Studentnav = () => {
                     <li className="nav-item">
                         <Link to="/student/home" className="nav-link">Available Classrooms</Link>
                     </li>
-                    <li className="nav-item">
+                    {/* <li className="nav-item">
                         <Link to="" className="nav-link">Reserved Classrooms</Link>
-                    </li>
+                    </li> */}
                     <li className="nav-item">
-                        <Link to="" className="nav-link">Activities</Link>
+                        <Link to="activities" className="nav-link">Activities</Link>
                     </li>
                 </ul>
                 <button className="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
