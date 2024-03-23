@@ -9,9 +9,62 @@
 }
 
 .confirmation-form-container {
-    height: 590px;
+    height: auto;
     background-color: #FFFFFF;
     padding: 30px;
     margin-bottom: 50px;
     border-radius: 10px;
+}
+
+.confirmations h5{
+    border: 1px solid #000; /* Add border with 1px width and black color */
+    border-radius: 10px; /* Apply 10px border radius to round the corners */
+    width: fit-content;
+    height: fit-content;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #2C5225;
+    color: white;
+    font-weight: 600;
+}
+
+.description{
+    width: 100%;
+    margin-top: -3.5vh;
+    padding-left: 8.5vw;
+    font-size: 20px;
+}
+
+.instructions{
+    width: 25vw;
+    min-height: 30vh;
+    max-height: auto;
+    border: 1px solid #c4c4c4; /* Add border with 1px width and black color */
+    border-radius: 10px;
+}
+
+.title{
+    border-bottom: 1px solid #c2c2c2;
+    padding-bottom: 15px;
+}
+
+.time{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.time .end{
+    margin-left: 75px;
+}
+
+.reserve{
+    font-weight: bold;
+}
+
+.timez{
+    font-weight: 700;
+    font-size: 20px;
 }
