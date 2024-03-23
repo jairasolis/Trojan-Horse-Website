@@ -1,25 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Dropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom'; // Assuming you're using react-router-dom
 import roomData from '../../../../public/map/PTCRooms.json'; // Importing JSON data
 import "./Home.css"
+import axios from "axios"
 
 const Home = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [selectedBuilding, setSelectedBuilding] = useState(null);
+    const [checker, setChecker] = useState()
     const handleBuildingSelect = (building) => {
         setSelectedBuilding(building);
         setDropdownOpen(false);
     };
     const handleCardClick = (classroomId) => {
         localStorage.setItem('selectedClassroomId', classroomId);
-      };
+    };
     const filterCardsByBuilding = (building) => {
         if (!selectedBuilding) {
             return true;
         }
         return building === selectedBuilding;
     };
+    React.useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get('http://127.0.0.1:8000/api/activity/');
+                setChecker(response.data);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
+
+        fetchData();
+    }, []);
+    console.log(checker)
 
     const cards = roomData.map(data => (
         <div key={data.classroom_id} className="card" style={{ display: filterCardsByBuilding(data.building) ? 'block' : 'none' }}>
