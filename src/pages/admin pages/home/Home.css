@@ -34,7 +34,7 @@
     justify-content: center;
     align-items: center;
     padding-bottom: 50px;
-
+    color: white;
 }
 
 .card {
@@ -52,7 +52,15 @@
     height: 250px;
     border-radius: 10px;
     /* flex: 1;  */
+    background-color: rgb(40, 154, 40);
+}
 
+.card-body-3 {
+    width: 300px;
+    height: 250px;
+    border-radius: 10px;
+    /* flex: 1;  */
+    background-color: rgb(208, 21, 21);
 }
 
 .card-body-2 img {
@@ -69,7 +77,30 @@
     position: absolute;
     bottom: 10px;
     font-size: 16px;
-    color: black;
+    color: #EBEBEB;
+    font-weight: 700;
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+.card-body-3 img {
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    object-position: top;
+    overflow: hidden;
+    padding-bottom: 10px;
+    object-fit: cover;
+}
+
+.card-body-3 .card-title {
+    position: absolute;
+    bottom: 10px;
+    font-size: 16px;
+    color: #EBEBEB;
+    font-weight: 700;
     width: 100%;
     display: flex;
     flex-wrap: nowrap;
@@ -78,6 +109,7 @@
 
 .room-availability span {
     text-align: center;
+
 }
 
 .card-title span {
@@ -109,4 +141,8 @@
 
 .spacer {
     width: 550px;
+}
+
+.occupied {
+    color: red;
 }

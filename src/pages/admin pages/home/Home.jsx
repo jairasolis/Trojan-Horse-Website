@@ -1,28 +1,32 @@
 import React, { useState, useEffect } from 'react';
 import { Dropdown } from 'react-bootstrap';
-import { Link } from 'react-router-dom'; // Assuming you're using react-router-dom
-import roomData from '../../../../public/map/PTCRooms.json'; // Importing JSON data
+import { Link } from 'react-router-dom';
+import roomData from '../../../../public/map/PTCRooms.json';
 import "./Home.css"
 import axios from "axios"
 
 const Home = () => {
     const [dropdownOpen, setDropdownOpen] = useState(false);
     const [selectedBuilding, setSelectedBuilding] = useState(null);
-    const [checker, setChecker] = useState()
+    const [checker, setChecker] = useState(null);
+
     const handleBuildingSelect = (building) => {
         setSelectedBuilding(building);
         setDropdownOpen(false);
     };
+
     const handleCardClick = (classroomId) => {
         localStorage.setItem('selectedClassroomId', classroomId);
     };
+
     const filterCardsByBuilding = (building) => {
         if (!selectedBuilding) {
             return true;
         }
         return building === selectedBuilding;
     };
-    React.useEffect(() => {
+
+    useEffect(() => {
         const fetchData = async () => {
             try {
                 const response = await axios.get('http://127.0.0.1:8000/api/activity/');
@@ -34,18 +38,26 @@ const Home = () => {
 
         fetchData();
     }, []);
-    console.log(checker)
+
+    const isClassroomOccupied = (classroomId) => {
+        // Check if checker exists and if it contains classrooms array
+        if (checker && Array.isArray(checker.classrooms)) {
+            // Check if any classroom in checker matches the given classroom ID
+            return checker.classrooms.some(classroom => classroom.classroom_id === parseInt(classroomId));
+        }
+        return false; // Default to false if checker is invalid or classrooms array is not available
+    };
 
     const cards = roomData.map(data => (
         <div key={data.classroom_id} className="card" style={{ display: filterCardsByBuilding(data.building) ? 'block' : 'none' }}>
             <Link to={`/admin/reserve/${data.classroom_id}`} className="card-link" onClick={() => handleCardClick(data.classroom_id)}>
-                <div className="card-body-2">
+                <div className={isClassroomOccupied(data.classroom_id) ? 'card-body-3' : 'card-body-2'}>
                     <div>
                         <img src={`/public/images/${data.img_name}`} alt="room" />
                     </div>
                     <div className="card-title">
                         <span className='room-title'>{data.room_name}</span>
-                        <span className='room-availability'></span>
+                        <span id='room-availability'>{isClassroomOccupied(data.classroom_id) ? "Occupied" : "Available"}</span>
                     </div>
                 </div>
             </Link>
