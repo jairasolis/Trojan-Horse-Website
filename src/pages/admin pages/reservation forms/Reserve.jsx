@@ -12,10 +12,10 @@ const Reserve = () => {
     title: "",
     description: "",
     teacher_id: "",
-    subject_id: "",
+    subject: "",
     student_program: "",
     year_level: "",
-    block_number: "",
+    block_number: ["2", "5"],
     start_time: "", // State for start time
     end_time: "" // State for end time
   });
@@ -44,7 +44,7 @@ const Reserve = () => {
 
   const handleNextClick = () => {
     // Check if any required field is empty
-    if (!form.student_program || !form.year_level || !form.block_number || !form.subject_id || !form.merge_blocks || !form.date || !form.start_time || !form.end_time) {
+    if (!form.student_program || !form.year_level || !form.block_number || !form.subject || !form.merge_blocks || !form.date || !form.start_time || !form.end_time) {
       // If any required field is empty, display an alert or error message to the user
       alert('Please fill in all fields.');
       return; // Exit the function early
@@ -57,7 +57,13 @@ const Reserve = () => {
 
   const handleFormChange = (e) => {
     const { name, value } = e.target;
-    setForm({ ...form, [name]: value });
+
+    if (name === 'block_number') {
+      // Set block_number as an array with the first element as empty and the second element as the selected value
+      setForm({ ...form, block_number: ["", value] });
+    } else {
+      setForm({ ...form, [name]: value });
+    }
   };
   const handleDateChange = (e) => {
     const date = e.target.value;
@@ -74,7 +80,6 @@ const Reserve = () => {
     const formattedEndTime = `${form.date} ${endTime}:00`; // Use endTime here
     setForm({ ...form, end_time: formattedEndTime });
   };
-
 
 
   return (
@@ -102,10 +107,10 @@ const Reserve = () => {
                 <Form.Label>Year Level</Form.Label>
                 <Form.Control as="select" name="year_level" value={form.year_level} onChange={handleFormChange} required>
                   <option value="" disabled>--select year level--</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
+                  <option value={1}>1</option>
+                  <option value={2}>2</option>
+                  <option value={3}>3</option>
+                  <option value={4}>4</option>
                 </Form.Control>
               </Form.Group>
               <Form.Group className="mb-3" controlId="student-block">
@@ -120,7 +125,7 @@ const Reserve = () => {
               </Form.Group>
               <Form.Group className="mb-3" controlId="subject-code">
                 <Form.Label>Subject Code</Form.Label>
-                <Form.Control as="select" name="subject_id" value={form.subject_id} onChange={handleFormChange} required>
+                <Form.Control as="select" name="subject" value={form.subject} onChange={handleFormChange} required>
                   <option value="" disabled>--select subject code--</option>
                   <option value="ite400">ITE 400</option>
                   <option value="ite300">ITE 300</option>
