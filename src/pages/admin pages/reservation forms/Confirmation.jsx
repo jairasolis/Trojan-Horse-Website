@@ -27,8 +27,6 @@ const Confirmation = () => {
         formData
       );
       console.log(response.data);
-      // Redirect user upon successful login
-      window.location.href = "/Student/Home";
     } catch (error) {
       if (error.response && error.response.status === 422) {
         console.error(error);
