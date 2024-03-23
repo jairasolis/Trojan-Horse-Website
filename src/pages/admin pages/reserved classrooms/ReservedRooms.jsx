@@ -35,7 +35,6 @@ const ReservedRooms = () => {
                 return 'ITS 201';
             case '3':
                 return 'PTC 301';
-            // Add cases for other room IDs as needed
             default:
                 return '';
         }
@@ -50,6 +49,7 @@ const ReservedRooms = () => {
             <div className="card-body-r">
                 <h5 className="card-title-r">{getRoomName(activity.classroom_id)}</h5>
                 <div style={{ height: '55px' }}></div>
+                <div>{activity.classroom_id}</div>
 
                 <div className="text-info-container">
                     <div className="text-infos-left">
