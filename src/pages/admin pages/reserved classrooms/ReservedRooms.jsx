@@ -3,15 +3,12 @@ import '../reserved classrooms/ReservedRooms.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisV } from '@fortawesome/free-solid-svg-icons';
 import axios from "axios";
+import roomData from '../../../../public/map/PTCRooms.json';
 
 const ReservedRooms = () => {
     const [showModal, setShowModal] = useState(false);
     const [storedUserData, setStoredUserData] = useState(null);
     const [allData, setAllData] = useState([]);
-
-    const toggleModal = () => {
-        setShowModal(!showModal);
-    };
 
     useEffect(() => {
         const fetchData = async () => {
@@ -30,12 +27,28 @@ const ReservedRooms = () => {
         fetchData();
     }, []);
 
-    console.log(allData);
+    const getRoomName = (roomId) => {
+        switch (roomId) {
+            case '1':
+                return 'ITS 200';
+            case '2':
+                return 'ITS 201';
+            case '3':
+                return 'PTC 301';
+            // Add cases for other room IDs as needed
+            default:
+                return '';
+        }
+    };
+
+    const toggleModal = () => {
+        setShowModal(!showModal);
+    };
 
     const cards = allData.activities ? allData.activities.map(activity => (
         <div key={activity.id} className="card-r">
             <div className="card-body-r">
-                <h5 className="card-title-r">PTC 201 - AC ROOM</h5>
+                <h5 className="card-title-r">{getRoomName(activity.classroom_id)}</h5>
                 <div style={{ height: '55px' }}></div>
 
                 <div className="text-info-container">
@@ -57,35 +70,6 @@ const ReservedRooms = () => {
                 <div className="see-acts" onClick={toggleModal}>
                     <p className="see-acts-text">see activities</p>
                 </div>
-            </div>
-        </div>
-    )) : null;
-
-    return (
-        <div className="home-container-r">
-            <div style={{ height: '85px' }}></div>
-
-            <div className="classroom-container">
-                <div className="text-container">
-                    <h1>Reserved Classrooms</h1>
-                </div>
-                <div style={{ width: '810px' }}></div>
-            </div>
-            <div style={{ height: '28px' }}></div>
-
-            <div className="card-container-r">
-                {/* PTC BLDG */}
-                {cards}
-                {/* 
-                <div className="card-r">
-                    <div className="card-body-r">
-                        <h5 className="card-title-r">PTC 201 - AC ROOM</h5>
-                        <div className="icon-container">
-                            <FontAwesomeIcon icon={faEllipsisV} className="icon" />
-                        </div>
-                    </div>
-                </div>
-            </div> */}
                 {showModal && (
                     <div className="modal" style={{ display: 'block' }}>
                         <div className="modal-content">
@@ -102,7 +86,22 @@ const ReservedRooms = () => {
                 )}
             </div>
         </div>
+    )) : null;
 
+    return (
+        <div className="home-container-r">
+            <div style={{ height: '85px' }}></div>
+            <div className="classroom-container">
+                <div className="text-container">
+                    <h1>Reserved Classrooms</h1>
+                </div>
+                <div style={{ width: '810px' }}></div>
+            </div>
+            <div style={{ height: '28px' }}></div>
+            <div className="card-container-r">
+                {cards}
+            </div>
+        </div>
     );
 };
 
