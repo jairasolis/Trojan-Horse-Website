@@ -98,9 +98,9 @@ const Reserve = () => {
                 <Form.Control as="select" name="student_program" value={form.student_program} onChange={handleFormChange} required>
                   <option value="" disabled>--select program--</option>
                   <option value="bsit">BSIT</option>
-                  <option value="bsce">BSCE</option>
+                  {/* <option value="bsce">BSCE</option>
                   <option value="bsa">BSA</option>
-                  <option value="bspsych">BSPSYCH</option>
+                  <option value="bspsych">BSPSYCH</option> */}
                 </Form.Control>
               </Form.Group>
               <Form.Group className="mb-3" controlId="year-level">

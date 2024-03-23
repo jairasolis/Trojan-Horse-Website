@@ -35,7 +35,7 @@ const ReservedRooms = () => {
             <div className="card-r" >
                 <div className="card-body-r">
                     <h5 className="card-title-r">PTC 201 - AC ROOM</h5>
-                    <div className="icon-container" onClick={toggleDropdown}>
+                    {/* <div className="icon-container" onClick={toggleDropdown}>
                     <FontAwesomeIcon icon={faEllipsisV} className="icon" />
                     {showDropdown && (
                         <div className="dropdown-content">
@@ -44,7 +44,7 @@ const ReservedRooms = () => {
                         </button>
                         </div>
                     )}
-                    </div>
+                    </div> */}
                     <div style={{ height: '55px' }}></div>
 
                     <div className="text-info-container">
@@ -69,7 +69,7 @@ const ReservedRooms = () => {
                 </div>
             </div>
                         
-            <div className="card-r" >
+            {/* <div className="card-r" >
                 <div className="card-body-r">
                     <h5 className="card-title-r">PTC 201 - AC ROOM</h5>
                     <div className="icon-container">
@@ -93,8 +93,8 @@ const ReservedRooms = () => {
                         <FontAwesomeIcon icon={faEllipsisV} className="icon" />
                     </div>
                 </div>
-            </div>
-        </div>
+            </div>*/}
+        </div> 
         {showModal && (
         <div className="modal" style={{display: 'block'}}>
           <div className="modal-content">

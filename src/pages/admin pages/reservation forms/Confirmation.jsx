@@ -26,6 +26,7 @@ const Confirmation = () => {
         `http://127.0.0.1:8000/api/activity/${params.id}`,
         formData
       );
+      window.location.href="/admin/reserved-classrooms"
       console.log(response.data);
     } catch (error) {
       if (error.response && error.response.status === 422) {
