@@ -85,8 +85,8 @@ const ReservedRooms = () => {
                         <p className="card-title-big">{activity.end_time}</p>
                     </div>
                 </div>
-                <div className="see-acts" onClick={toggleModal}>
-                    <p className="see-acts-text">see activities</p>
+                <div className="see-acts" onClick={() => activity.title && toggleModal()}>
+                    <p className="see-acts-text">{activity.title ? "see activities" : "no set activity"}</p>
                 </div>
                 {showModal && (
                     <div className="modal" style={{ display: 'block' }}>
@@ -96,9 +96,8 @@ const ReservedRooms = () => {
                             </span>
                             <p className="modal-title">ACTIVITIES</p>
                             <div style={{ height: '20px' }}></div>
-                            <p className="modal-title-smol">COUNT 1 - 5.</p>
-                            <p className="modal-title-smol">COUNT 1 - 5.</p>
-                            <p className="modal-title-smol">COUNT 1 - 5.</p>
+                            <p className="modal-title-smol">{activity.title}</p>
+                            <p className="modal-title-smol">{activity.description}</p>
                         </div>
                     </div>
                 )}
