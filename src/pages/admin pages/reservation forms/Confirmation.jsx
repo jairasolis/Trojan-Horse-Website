@@ -44,7 +44,7 @@ const Confirmation = () => {
             </Col>
             <Col>
               <div className="reserve-buttons d-flex justify-content-end">
-                <Button className='go-back-button mt-4' style={{ backgroundColor: '#E6E6E6', border: 'none', color: '#414141' }} onClick={handleBackClick}>Go back</Button>
+                <Button className='go-back-button mt-4' style={{ backgroundColor: '#E6E6E6', border:'none', color: '#414141' }} onClick={handleBackClick}>Go back</Button>
                 <Button className='next-button mt-4' style={{ backgroundColor: '#2C5225', border: 'none' }} onClick={handleNextClick}>Submit</Button>
               </div>
             </Col>
