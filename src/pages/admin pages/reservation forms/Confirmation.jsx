@@ -18,7 +18,7 @@ const Confirmation = () => {
 
   // const handleNextClick = () => {
   //   navigate(`/admin/reservation-confirmation`);
-  // };
+  //dasda };
   const handleValidation = async (event) => {
     event.preventDefault();
     try {
