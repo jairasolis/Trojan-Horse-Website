@@ -44,14 +44,14 @@ function App() {
             <Route path="/admin/home" element={<Home />} />
             <Route path="/admin/reserved-classrooms" element={<ReservedRooms />} />
             <Route path="/admin/reserve/:id" element={<Reserve />} />
-            <Route path="/admin/set-activity" element={<SetActivity />} />
-            <Route path="/admin/reservation-confirmation" element={<Confirmation />} />
+            <Route path="/admin/set-activity/:id" element={<SetActivity />} />
+            <Route path="/admin/reservation-confirmation/:id" element={<Confirmation />} />
           </Route>
 
           {/* admin pages */}
           <Route element={<StudentLayout />} path="/student">
             <Route path="home" element={<StudentHome />} />
-            <Route path="room/:bldgName/:bldgNumber" Component={RoomPage}/>
+            <Route path="room/:bldgName/:bldgNumber" Component={RoomPage} />
           </Route>
         </Routes>
       </BrowserRouter>

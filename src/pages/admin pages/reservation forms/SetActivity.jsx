@@ -7,14 +7,21 @@ const SetActivity = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const formData = location.state ? location.state.formData : null;
+  const [newForm, setNewForm] = React.useState(formData)
   const params = useParams();
+  console.log(newForm)
+
+  const handleFormChange = (e) => {
+    const { name, value } = e.target;
+    setNewForm({ ...newForm, [name]: value });
+  };
 
   const handleBackClick = () => {
-    navigate(`/admin/reserve${params.id}`);
+    navigate(`/admin/reserve/${params.id}`);
   };
 
   const handleNextClick = () => {
-    navigate('/admin/reservation-confirmation');
+    navigate(`/admin/reservation-confirmation/${params.id}`, { state: { formData: newForm } });
   };
 
   return (
@@ -26,11 +33,11 @@ const SetActivity = () => {
           </Row>
           <Row>
             <Form.Group className="mb-3" controlId="titleInput">
-              <Form.Control type="text" placeholder="Title" style={{ width: '400px', backgroundColor: '#F4F4F4' }} />
+              <Form.Control name="title" onChange={handleFormChange} type="text" placeholder="Title" style={{ width: '400px', backgroundColor: '#F4F4F4' }} />
             </Form.Group>
             <hr style={{ width: '45%', margin: '11px', paddingBottom: '10px' }} />
             <Form.Group className="mb-3" controlId="instructionsInput">
-              <Form.Control as="textarea" rows={3} placeholder="Enter something" style={{ width: '560px', height: '320px', backgroundColor: '#F4F4F4', resize: 'none' }} ></Form.Control>
+              <Form.Control name="description" onChange={handleFormChange} as="textarea" rows={3} placeholder="Enter something" style={{ width: '560px', height: '320px', backgroundColor: '#F4F4F4', resize: 'none' }} ></Form.Control>
             </Form.Group>
           </Row>
           <Row className=''>

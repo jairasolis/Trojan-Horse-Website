@@ -43,25 +43,38 @@ const Reserve = () => {
   };
 
   const handleNextClick = () => {
-    navigate('/admin/set-activity', { state: { formData: form } });
+    // Check if any required field is empty
+    if (!form.student_program || !form.year_level || !form.block_number || !form.subject_id || !form.merge_blocks || !form.date || !form.start_time || !form.end_time) {
+      // If any required field is empty, display an alert or error message to the user
+      alert('Please fill in all fields.');
+      return; // Exit the function early
+    }
+
+    // If all required fields are filled, navigate to the next step
+    navigate(`/admin/set-activity/${params.id}`, { state: { formData: form } });
   };
+
 
   const handleFormChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
   };
-
+  const handleDateChange = (e) => {
+    const date = e.target.value;
+    setForm({ ...form, date: date });
+  };
   const handleStartTimeChange = (e) => {
-    const startTime = new Date(e.target.value);
-    const formattedStartTime = startTime.toISOString().slice(0, 16).replace('T', ' ');
-    setForm({ ...form, start_time: formattedStartTime + ":00" });
+    const startTime = e.target.value;
+    const formattedStartTime = `${form.date} ${startTime}:00`; // Use startTime here
+    setForm({ ...form, start_time: formattedStartTime });
   };
 
   const handleEndTimeChange = (e) => {
-    const endTime = new Date(e.target.value);
-    const formattedEndTime = endTime.toISOString().slice(0, 16).replace('T', ' ');
-    setForm({ ...form, end_time: formattedEndTime + ":00" });
+    const endTime = e.target.value;
+    const formattedEndTime = `${form.date} ${endTime}:00`; // Use endTime here
+    setForm({ ...form, end_time: formattedEndTime });
   };
+
 
 
   return (
@@ -77,7 +90,7 @@ const Reserve = () => {
             <Col md={6} className='student-details'>
               <Form.Group className="mb-3" controlId="student-program">
                 <Form.Label>Student Program</Form.Label>
-                <Form.Control as="select" name="student_program" value={form.student_program} onChange={handleFormChange}>
+                <Form.Control as="select" name="student_program" value={form.student_program} onChange={handleFormChange} required>
                   <option value="" disabled>--select program--</option>
                   <option value="bsit">BSIT</option>
                   <option value="bsce">BSCE</option>
@@ -87,7 +100,7 @@ const Reserve = () => {
               </Form.Group>
               <Form.Group className="mb-3" controlId="year-level">
                 <Form.Label>Year Level</Form.Label>
-                <Form.Control as="select" name="year_level" value={form.year_level} onChange={handleFormChange}>
+                <Form.Control as="select" name="year_level" value={form.year_level} onChange={handleFormChange} required>
                   <option value="" disabled>--select year level--</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -97,7 +110,7 @@ const Reserve = () => {
               </Form.Group>
               <Form.Group className="mb-3" controlId="student-block">
                 <Form.Label>Student Block</Form.Label>
-                <Form.Control as="select" name="block_number" value={form.block_number} onChange={handleFormChange}>
+                <Form.Control as="select" name="block_number" value={form.block_number} onChange={handleFormChange} required>
                   <option value="" disabled>--select block--</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -107,7 +120,7 @@ const Reserve = () => {
               </Form.Group>
               <Form.Group className="mb-3" controlId="subject-code">
                 <Form.Label>Subject Code</Form.Label>
-                <Form.Control as="select" name="subject_id" value={form.subject_id} onChange={handleFormChange}>
+                <Form.Control as="select" name="subject_id" value={form.subject_id} onChange={handleFormChange} required>
                   <option value="" disabled>--select subject code--</option>
                   <option value="ite400">ITE 400</option>
                   <option value="ite300">ITE 300</option>
@@ -117,8 +130,8 @@ const Reserve = () => {
               </Form.Group>
               <Form.Group className="mb-3" controlId="merge-blocks">
                 <Form.Label>Merge with other blocks?</Form.Label>
-                <Form.Control as="select" name="merge_blocks" value={form.merge_blocks} onChange={handleFormChange}>
-                  <option value="" disabled>--select-- </option>
+                <Form.Control as="select" name="merge_blocks" value={form.merge_blocks} onChange={handleFormChange} required>
+                  <option value="">--select--</option>
                   <option value="yes">yes</option>
                   <option value="no">no</option>
                 </Form.Control>
@@ -126,53 +139,47 @@ const Reserve = () => {
             </Col>
             <Col md={6} className="d-flex flex-column reserve-date-container">
               <Form.Group className="mb-3" controlId="startEndTime">
+                <Form.Label>Date</Form.Label>
+                <Form.Control
+                  type="date"
+                  name="date"
+                  value={form.date}
+                  onChange={handleDateChange}
+                  required
+                />
                 <Form.Label>Start Time</Form.Label>
-                <Row>
-                  <Col>
-                    <Form.Control
-                      type="date"
-                      name="start_date"
-                      value={form.start_date}
-                      onChange={handleStartTimeChange}
-                    />
-                  </Col>
-                  <Col>
-                    <Form.Control
-                      as="select"
-                      name="start_time"
-                      value={form.start_time}
-                      onChange={handleStartTimeChange}
-                    >
-                      <option value="" disabled>--select year level--</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                    </Form.Control>
-                  </Col>
-                </Row>
+                <Form.Control
+                  as="select"
+                  name="start_time"
+                  onChange={handleStartTimeChange}
+                  required
+                >
+                  <option value="">--select start time--</option>
+                  <option value="07:30">7:30 AM</option>
+                  <option value="09:00">9:00 AM</option>
+                  <option value="10:30">10:30 AM</option>
+                  <option value="12:00">12:00 PM</option>
+                  <option value="13:30">1:30 PM</option>
+                  <option value="15:00">3:00 PM</option>
+                  <option value="16:30">4:30 PM</option>
+                </Form.Control>
                 <Form.Label className='mt-3'>End Time</Form.Label>
-                <Row>
-                  <Col>
-                    <Form.Control
-                      type="date"
-                      name="end_date"
-                      value={form.end_date}
-                      onChange={handleEndTimeChange}
-                    />
-                  </Col>
-                  <br />
-                  <Col>
-                    <Form.Control
-                      type="time"
-                      name="end_time"
-                      value={form.end_time}
-                      onChange={handleEndTimeChange}
-                    />
-                  </Col>
-                </Row>
-              </Form.Group>
+                <Form.Control
+                  as="select"
+                  name="end_time"
+                  onChange={handleEndTimeChange}
+                >
+                  <option value="">--select end time--</option>
+                  <option value="09:00">9:00 AM</option>
+                  <option value="10:30">10:30 AM</option>
+                  <option value="12:00">12:00 PM</option>
+                  <option value="13:30">1:30 PM</option>
+                  <option value="15:00">3:00 PM</option>
+                  <option value="16:30">4:30 PM</option>
+                  <option value="18:00">6:00 PM</option>
 
+                </Form.Control>
+              </Form.Group>
             </Col>
           </Row>
           <Row className=''>
