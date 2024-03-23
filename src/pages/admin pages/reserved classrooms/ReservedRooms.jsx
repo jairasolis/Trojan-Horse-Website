@@ -29,12 +29,30 @@ const ReservedRooms = () => {
 
     const getRoomName = (roomId) => {
         switch (roomId) {
-            case '1':
+            case 1:
                 return 'ITS 200';
-            case '2':
+            case 2:
                 return 'ITS 201';
-            case '3':
+            case 3:
                 return 'PTC 301';
+            case 4:
+                return 'PTC 302';
+            case 5:
+                return 'PTC 303';
+            case 6:
+                return 'PTC 304';
+            case 7:
+                return 'PTC 305';
+            case 8:
+                return 'PTC 306';
+            case 9:
+                return 'PTC 403';
+            case 10:
+                return 'PTC 404';
+            case 11:
+                return 'PTC 405';
+            case 12:
+                return 'PTC 406';
             default:
                 return '';
         }
@@ -49,7 +67,7 @@ const ReservedRooms = () => {
             <div className="card-body-r">
                 <h5 className="card-title-r">{getRoomName(activity.classroom_id)}</h5>
                 <div style={{ height: '55px' }}></div>
-                <div>{activity.classroom_id}</div>
+                {/* <div>{getRoomName(activity.classroom_id)}</div> */}
 
                 <div className="text-info-container">
                     <div className="text-infos-left">
